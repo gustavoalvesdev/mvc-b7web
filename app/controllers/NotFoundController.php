@@ -2,10 +2,12 @@
 
 require_once __DIR__ . '/../core/Controller.php';
 
-class NoticiasController extends Controller
+class NotFoundController extends Controller
 {
+
     public function index()
     {
-        $this->view('noticias/index');
+        $this->view('404/404');
     }
+
 }

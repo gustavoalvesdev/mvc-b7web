@@ -2,6 +2,7 @@
 
 require '../app/controllers/HomeController.php';
 require '../app/controllers/NoticiasController.php';
+require '../app/controllers/NotFoundController.php';
 
 class Router 
 {
@@ -15,8 +16,12 @@ class Router
 
         $controllerName = ucfirst($controllerName) . 'Controller';
 
+        if (!class_exists($controllerName)) {
+            $controllerName = 'NotFoundController'; 
+        }
+     
         $controller = new $controllerName();
-
+       
         $controller->index();
     }
 
