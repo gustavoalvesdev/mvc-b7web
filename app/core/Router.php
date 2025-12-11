@@ -10,6 +10,7 @@ class Router
     public function dispatch($url)
     {
         $url = trim($url, '/');
+
         $parts = $url ? explode('/', $url) : [];
 
         $controllerName = $parts[0] ?? 'Home';
@@ -21,8 +22,10 @@ class Router
         }
      
         $controller = new $controllerName();
-       
-        $controller->index();
+        
+        $actionName = $parts[1] ?? 'index';
+
+        $controller->$actionName();
     }
 
 }

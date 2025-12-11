@@ -10,10 +10,12 @@ class HomeController extends Controller
     {
         $usuario = new Usuario();
         $data = $usuario->getUserData();
-
-        $nome = 'Gustavo Alves';
-        $idade = 33;
+        
         $this->view('home/index', $data);
     }
 
+    public function contact()
+    {
+        $this->view('home/contact');
+    }
 }
