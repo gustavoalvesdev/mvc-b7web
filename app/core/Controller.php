@@ -14,4 +14,9 @@ class Controller
         }
         require $viewFile;
     }
+
+    public function actionNotFound()
+    {
+        $this->view('404/404');
+    }
 }

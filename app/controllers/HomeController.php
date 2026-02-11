@@ -18,4 +18,6 @@ class HomeController extends Controller
     {
         $this->view('home/contact');
     }
+
+    
 }

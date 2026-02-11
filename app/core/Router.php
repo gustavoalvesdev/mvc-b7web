@@ -25,6 +25,10 @@ class Router
         
         $actionName = $parts[1] ?? 'index';
 
+        if (!method_exists($controllerName, $actionName)) {
+            $actionName = 'actionNotFound';
+        }
+
         $controller->$actionName();
     }
 
